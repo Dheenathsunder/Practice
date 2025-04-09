@@ -1,0 +1,54 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Projects</title>
+    <style>
+        button{
+            background-color: red;
+            color:aliceblue;
+            border:none;
+            width:150px;
+            height:50px;
+            border-radius:30px;
+            font-size:16px;
+            font-weight:bold;
+            cursor:pointer;
+        }
+
+        .isSubscribed{
+            background-color: green;
+            color:white;
+        }
+        .subscribed{
+            background-color: red;
+            color:white;
+        }
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+            
+
+        }
+
+    </style>
+</head>
+<body>
+    <p>Youtube Subscribe Button</p>
+    <button onclick="func()" class="id1">Subscribe</button>
+    <!-- <button onclick="func()" class="id1">Subscribe</button> -->
+    <script>
+        function func(){
+            const buttonElement = document.querySelector('.id1');
+            console.log(buttonElement); // or innerHTML
+            if(buttonElement.innerText === 'Subscribe'){
+                buttonElement.innerText = 'Subscribed';
+                buttonElement.classList.add('isSubscribed');
+            } else {
+                buttonElement.innerText = 'Subscribe';
+                buttonElement.classList.remove('isSubscribed');
+            }
+        }
+
+    </script>
+</body>
+</html>

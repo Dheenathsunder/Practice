@@ -1,0 +1,35 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock Paper Scissors</title>
+</head>
+<body>
+    <p>Rock Paper Scissors</p>
+    <button onclick="playgame('Rock')">Rock</button>
+    <button onclick="playgame('Paper')">Paper</button>
+    <button onclick="playgame('Scissors')">Scissors</button>
+    <p id="result"></p>
+    <script>
+        function playgame(playerChoice){
+            const choices=['Rock','Paper','Scissors'];
+            const computerChoice=choices[Math.floor(Math.random()*3)];
+            let res="";
+            if(playerChoice===computerChoice){
+                res="It is a tie";
+            }
+            else if(
+                (playerChoice==='Rock' && computerChoice==='Scissors') ||
+                (playerChoice==='Paper' && computerChoice==='Rock') ||
+                (playerChoice==='Scissors' && computerChoice==='Rock')){
+        
+                res="You Win!";
+            }
+            else{
+                res="You lost";
+            }
+            document.getElementById('result').innerHTML=`You chose: ${playerChoice} | Computer : ${computerChoice} <br> ${res}`;
+        }
+    </script>
+</body>
+</html>

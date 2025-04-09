@@ -1,0 +1,62 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .get{
+            width: 200px;
+            height:30px;
+        }
+        button{
+            background-color: green;
+            border:none;
+            width: 100px;
+            height:30px;
+            color:white;
+            font-size:16px;
+            cursor:pointer;
+        }
+        *{
+            font-family: Roboto;
+        }
+    </style>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <p>Amazon Shipping Calculator</p>
+    <p>Orders under $40 =+ $10 shipping</p>
+    <p>Orders over $40 = FREE shipping</p>
+    <input type="text" class="get" placeholder="Enter the cost" onkeydown="
+    if(event.key==='Enter'){
+        calc();
+    }">
+    <button onclick="calc()">calculate</button>
+    <p class="res"></p>
+
+    <script>
+        function calc(){
+            const inp=document.querySelector('.get');
+            console.log(inp.value);
+            if(inp.value===""){
+                return;
+            }
+            let cost=Number(inp.value);
+            console.log(cost);
+            if(cost===0){
+                return;
+            }
+            if(cost<40){
+                cost=cost+10;
+                document.querySelector('.res').innerHTML=`$${cost}`;
+            }
+            else{
+                document.querySelector('.res').innerHTML=`$${cost}`;
+            }
+        }
+    </script>
+</body>
+</html>
